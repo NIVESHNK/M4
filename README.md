@@ -10,11 +10,23 @@ To write a C Program to perform the basic left shift operation for 44 integer nu
 5.	Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
+int main() {
+    int num = 44;
+    int shifted;
+    shifted = num << 3; 
+    printf("Original number: %d\n", num);
+    printf("After left shift by 3 positions: %d\n", shifted);
+    return 0;
+}
+
+```
 
 ## OUTPUT
 
 
-
+![image](https://github.com/user-attachments/assets/b237efa1-65b7-4c30-9fe8-9729fe8a7b50)
 
 
 
@@ -47,9 +59,25 @@ Write a C Program to check whether the two numbers are equal or not using simple
 5.	Stop the program.
 
 ## PROGRAM
+```
+#include<stdio.h>
+int main()
+{
+    int a,b;
+    scanf("%d%d",&a,&b);
+    if(a==b)
+    printf("Numbers are Equal");
+    else
+    printf("Numbers are not Equal");
+    
+    
+}
+```
 
 
 ## OUTPUT
+![image](https://github.com/user-attachments/assets/6a408d82-0ce6-46d0-94da-78ad83a49f02)
+
            
 ## RESULT
 
@@ -70,8 +98,24 @@ Write a C Program to convert the given string into lowercase.
 5.	Stop the program.
 
 ## PROGRAM
+```
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main(){
+    char str[100];
+    int i;
+    scanf("%s",str);
+    for(i=0;str[i]!=0;i++){
+        str[i]=tolower(str[i]);
+    }
+    printf("Lower case String is:%s",str);
+}
+```
 
 ## OUTPUT
+![image](https://github.com/user-attachments/assets/2be359e9-9177-445e-9ed5-b652f53a6990)
+
 
 
 
@@ -95,8 +139,36 @@ Write a C Program to count the total number of words in a given string using do 
 6.	Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+int main() {
+    char str[100];
+    int i = 0, wordCount = 0;
+    int inWord = 0;
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+    str[strcspn(str, "\n")] = '\0';
+    do {
+        if (isspace(str[i]) || str[i] == '\0') {
+            if (inWord) {
+                wordCount++;
+                inWord = 0;
+            }
+        } else {
+            inWord = 1;
+        }
+        i++;
+    } while (str[i - 1] != '\0');
+    printf("Total number of words: %d\n", wordCount);
+    return 0;
+}
+
+```
 
 ## OUTPUT
+![image](https://github.com/user-attachments/assets/0055f7fe-ada9-4aba-b72a-e824f3d72eea)
 
 
 
@@ -129,9 +201,29 @@ Step 7: After the loop, check the value of flag:
 Step 8: End the program.
 
 ## PROGRAM
+```
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char str1[100],str2[100];
+    scanf("%s",str1);
+    scanf("%s",str2);
+    int len=strlen(str1);
+    int len1=strlen(str2);
+    if(len>len1){
+        printf("str2 is Less than str1");
+    }
+    else{
+        printf("str1 is Less than str2");
+    }
+    return 0;
+}
+```
 
 
 ## OUTPUT
+![image](https://github.com/user-attachments/assets/a0a1e976-b194-4202-a63c-549b5ea60224)
+
  
 
 ## RESULT
