@@ -202,19 +202,29 @@ Step 8: End the program.
 
 ## PROGRAM
 ```
-#include<stdio.h>
-#include<string.h>
-int main(){
-    char str1[100],str2[100];
-    scanf("%s",str1);
-    scanf("%s",str2);
-    int len=strlen(str1);
-    int len1=strlen(str2);
-    if(len>len1){
-        printf("str2 is Less than str1");
-    }
-    else{
-        printf("str1 is Less than str2");
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str[100];
+    int rows;
+    printf("Enter a string: ");
+    scanf("%s", str);
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+    int len = strlen(str);
+    int index = 0;
+    for (int i = 1; i <= rows; i++) {
+        for (int j = 0; j < rows - i; j++) {
+            printf(" ");
+        }
+        for (int j = 0; j < i; j++) {
+            printf("%c", str[index % len]);
+            index++;
+            if (j != i - 1) {
+                printf(" ");
+            }
+        }
+        printf("\n");
     }
     return 0;
 }
@@ -222,7 +232,8 @@ int main(){
 
 
 ## OUTPUT
-![image](https://github.com/user-attachments/assets/a0a1e976-b194-4202-a63c-549b5ea60224)
+
+![image](https://github.com/user-attachments/assets/8544cd5b-8868-47af-845a-4efbe7b83637)
 
  
 
